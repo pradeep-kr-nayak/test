@@ -1,0 +1,76 @@
+[
+    {
+        "post_id": 1,
+        "author": "John Doe",
+        "post_title": "The Art of Writing",
+        "traffic_channel": "Organic Search",
+        "performance": [
+            {
+                "date": "2024-05-01",
+                "unique_page_views": 100,
+                "page_views": 150,
+                "visitors": 90,
+                "time_spent": 300,
+                "hourly_performance": [
+                    {
+                        "hour": 0,
+                        "unique_page_views": 12,
+                        "page_views": 18,
+                        "visitors": 11,
+                        "time_spent": 32
+                    },
+                    {
+                        "hour": 1,
+                        "unique_page_views": 18,
+                        "page_views": 22,
+                        "visitors": 15,
+                        "time_spent": 37
+                    }
+                ]
+            },
+            {
+                "date": "2024-05-02",
+                "unique_page_views": 120,
+                "page_views": 180,
+                "visitors": 110,
+                "time_spent": 320
+            },
+            {
+                "date": "2024-05-03",
+                "unique_page_views": 80,
+                "page_views": 120,
+                "visitors": 70,
+                "time_spent": 280
+            }
+        ]
+    },
+    {
+        "post_id": 2,
+        "author": "Jane Smith",
+        "post_title": "Top 10 Tips for Blogging",
+        "traffic_channel": "Referral",
+        "performance": [
+            {
+                "date": "2024-05-01",
+                "unique_page_views": 80,
+                "page_views": 100,
+                "visitors": 70,
+                "time_spent": 250
+            },
+            {
+                "date": "2024-05-02",
+                "unique_page_views": 110,
+                "page_views": 140,
+                "visitors": 90,
+                "time_spent": 300
+            },
+            {
+                "date": "2024-05-03",
+                "unique_page_views": 100,
+                "page_views": 130,
+                "visitors": 80,
+                "time_spent": 280
+            }
+        ]
+    }
+]
