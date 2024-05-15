@@ -1,7 +1,7 @@
 import { MetricsWrapper, Title, Count, Unit } from "./styles";
 export const Metrics = () => {
   return (
-    <MetricsWrapper>
+    <MetricsWrapper ispadded="true">
       <div>
         <Title>Visited Content</Title>
         <Count>

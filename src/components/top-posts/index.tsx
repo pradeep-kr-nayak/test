@@ -1,9 +1,7 @@
-import { Section } from "../shared/shared.styles";
 import {
   Counter,
   PostDetail,
   Title,
-  PostLinkIcon,
   PostMeta,
   PostType,
   PublishedOn,
@@ -13,27 +11,21 @@ import {
   CellContent,
   TopPostsWrapper,
 } from "./top-posts.styles";
+import { Arrow } from "../icons/arrow";
+import { ExternalLinkIcon } from "../icons/external-link";
 
 export const TopPosts = () => {
   return (
     <TopPostsWrapper>
       <Table>
         <thead>
-          <th>
-            <td>Top 50 Posts</td>
-          </th>
-          <th>
-            <td>Unique Page Views</td>
-          </th>
-          <th>
-            <td>Page Views</td>
-          </th>
-          <th>
-            <td>Time Spent</td>
-          </th>
-          <th>
-            <td>Visitors</td>
-          </th>
+          <tr>
+            <th>Top 50 Posts</th>
+            <th>Unique Page Views</th>
+            <th>Page Views</th>
+            <th>Time Spent</th>
+            <th>Visitors</th>
+          </tr>
         </thead>
         <tbody>
           <tr>
@@ -44,7 +36,7 @@ export const TopPosts = () => {
                   <Title>
                     Your 2024 Zodiac sign guides to the Best HousePlants{" "}
                     <a href="//some-url">
-                      <PostLinkIcon />
+                      <ExternalLinkIcon />
                     </a>
                   </Title>
                   <PostMeta>
@@ -69,7 +61,7 @@ export const TopPosts = () => {
                   <Title>
                     Your 2024 Zodiac sign guides to the Best HousePlants{" "}
                     <a href="//some-url">
-                      <PostLinkIcon />
+                      <ExternalLinkIcon />
                     </a>
                   </Title>
                   <PostMeta>
@@ -94,7 +86,7 @@ export const TopPosts = () => {
                   <Title>
                     Your 2024 Zodiac sign guides to the Best HousePlants{" "}
                     <a href="//some-url">
-                      <PostLinkIcon />
+                      <ExternalLinkIcon />
                     </a>
                   </Title>
                   <PostMeta>
@@ -119,7 +111,7 @@ export const TopPosts = () => {
                   <Title>
                     Your 2024 Zodiac sign guides to the Best HousePlants{" "}
                     <a href="//some-url">
-                      <PostLinkIcon />
+                      <ExternalLinkIcon />
                     </a>
                   </Title>
                   <PostMeta>
@@ -144,7 +136,7 @@ export const TopPosts = () => {
                   <Title>
                     Your 2024 Zodiac sign guides to the Best HousePlants{" "}
                     <a href="//some-url">
-                      <PostLinkIcon />
+                      <ExternalLinkIcon />
                     </a>
                   </Title>
                   <PostMeta>
@@ -162,6 +154,15 @@ export const TopPosts = () => {
             <td>10,000</td>
           </tr>
         </tbody>
+        <tfoot>
+          <tr>
+            <td>1-25 of 50</td>
+            <td colSpan={4}>
+              <Arrow color="#555556" />
+              <Arrow color="#555556" rotate={180} />
+            </td>
+          </tr>
+        </tfoot>
       </Table>
     </TopPostsWrapper>
   );

@@ -32,6 +32,10 @@ export const FilterButton = styled.button`
   &:last-child {
     border-radius: 0 3px 3px 0;
   }
+  &.active {
+    background-color: #edeffe;
+    border-color: #354ab2;
+  }
 `;
 
 export const FilterCountButton = styled(FilterButton)`

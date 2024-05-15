@@ -1,30 +1,9 @@
-import { MainWrapper, MainContent } from "./styles";
-import styled from "styled-components";
+import { MainWrapper, MainContent, TabsWrapper, Tab } from "./styles";
 import TabSwitcher from "../tab-switcher";
 import Posts from "../post-views";
 import { Metrics } from "../metrics";
 import { TopPosts } from "../top-posts";
-
-const TabsWrapper = styled.div`
-  display: flex;
-  margin-top: 20px;
-  line-height: 16px;
-`;
-
-const Tab = styled.button`
-  margin-right: 15px;
-  height: 40px;
-  line-height: 1.2;
-  color: #171918;
-  background-color: transparent;
-  padding: 0;
-  border-bottom: 2px solid transparent;
-  cursor: pointer;
-  &.condenast-active {
-    color: #334ab2;
-    border-color: #334ab2;
-  }
-`;
+import { Section } from "../shared/shared.styles";
 
 const Main = () => {
   return (
@@ -51,10 +30,10 @@ const Main = () => {
             </div>
           </TabSwitcher.TabPanel>
           <TabSwitcher.TabPanel tabId={1}>
-            <div>Author Tab placeholder</div>
+            <Section ispadded="true">Author Tab placeholder</Section>
           </TabSwitcher.TabPanel>
           <TabSwitcher.TabPanel tabId={2}>
-            <div>Category Tab placeholder</div>
+            <Section ispadded="true">Category Tab placeholder</Section>
           </TabSwitcher.TabPanel>
         </TabSwitcher>
       </MainContent>

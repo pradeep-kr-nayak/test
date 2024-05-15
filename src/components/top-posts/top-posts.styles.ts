@@ -13,6 +13,7 @@ export const Table = styled.table`
     border-right: 1px solid #cccbcb;
     padding-top: 20px;
     padding-left: 20px;
+    text-align: left;
     &:first-child {
       font-weight: 400;
       font-size: 24px;
@@ -25,17 +26,29 @@ export const Table = styled.table`
     }
   }
   tr {
-    border-top: 1px solid #cccbcb;
+    border-bottom: 1px solid #cccbcb;
     td {
       border-right: 1px solid #cccbcb;
       text-align: left;
       padding: 14px 14px 14px 0;
       padding-left: 20px;
-      &:first-child {
-      }
+      vertical-align: middle;
       &:last-child {
         padding-right: 20px;
         border-right: none;
+      }
+    }
+  }
+  tfoot {
+    td {
+      border: none;
+      &:last-child {
+        text-align: right;
+        padding-right: 30px;
+        > * {
+          margin-left: 20px;
+          cursor: pointer;
+        }
       }
     }
   }
@@ -52,14 +65,28 @@ export const Counter = styled.div`
 export const PostDetail = styled.div``;
 export const Title = styled.div`
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 500;
   padding-bottom: 12px;
+  a {
+    display: inline-block;
+    margin-left: 10px;
+  }
 `;
 export const PostLinkIcon = styled.div``;
 export const PostMeta = styled.div`
   display: flex;
+  > * {
+    font-size: 14px;
+    margin-right: 14px;
+    color: #575959;
+  }
 `;
-export const PostType = styled.div``;
+export const PostType = styled.div`
+  font-weight: bold;
+  color: #575657;
+`;
 export const Author = styled.div``;
 export const Category = styled.div``;
 export const PublishedOn = styled.div``;
+
+export const PrevNext = styled.div``;

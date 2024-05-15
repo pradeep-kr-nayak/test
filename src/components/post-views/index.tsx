@@ -1,11 +1,11 @@
 import { useState } from "react";
+import { Chart } from "react-google-charts";
 import "@wojtekmaj/react-daterange-picker/dist/DateRangePicker.css";
 import "react-calendar/dist/Calendar.css";
-import { Chart } from "react-google-charts";
 import { Section } from "../shared/shared.styles";
+import postData from "../../mock/hourly/post.json";
 
 import {
-  FilterButton,
   FilterWrapper,
   FiltersLeft,
   FiltersRight,
@@ -15,46 +15,28 @@ import {
 } from "./filter-wrapper";
 import FunnelIcon from "../icons/funnel";
 import RefreshIcon from "../icons/refresh";
+import { getFilteredData } from "../../utils/getData";
+import { TimeFilters } from "./time-filters";
+import { filterList } from "../../constants";
 
 type ValuePiece = Date | null;
 
 type Value = ValuePiece | [ValuePiece, ValuePiece];
 
-const data = [
-  ["Year", "Sales"],
-  ["2013", 100],
-  ["2014", 1170],
-  ["2015", 660],
-  ["2016", 1030],
-  ["2017", 1030],
-  ["2018", 1030],
-  ["2019", 1030],
-  ["2020", 1030],
-  ["2021", 1030],
-];
-
-const options = {
-  title: "Company Performance",
-  hAxis: { title: "Year", titleTextStyle: { color: "#333" } },
-  vAxis: { minValue: 0 },
-  chartArea: { width: "90%", height: "70%" },
-  pointSize: 10,
-  colors: ["#328ec8"],
-  lineWidth: 5,
-};
-
 const Posts = () => {
+  const [activeFilter, setActiveFilter] = useState(filterList[0]);
   const [value, onChange] = useState<Value>([new Date(), new Date()]);
+  const gh = getFilteredData({
+    postData,
+    activeFilter,
+  });
+  console.log(gh);
+
   return (
     <div>
       <FilterWrapper>
         <FiltersLeft>
-          <div>
-            <FilterButton>Hourly</FilterButton>
-            <FilterButton>Daily</FilterButton>
-            <FilterButton>Weekly</FilterButton>
-            <FilterButton>Monthly</FilterButton>
-          </div>
+          <TimeFilters setActiveFilter={setActiveFilter} />
           <DateRangePickerStyled onChange={onChange} value={value} />
           <FilterCountButton>
             <FunnelIcon />
@@ -68,13 +50,13 @@ const Posts = () => {
           </RefreshButton>
         </FiltersRight>
       </FilterWrapper>
-      <Section>
+      <Section ispadded="true">
         <Chart
           chartType="AreaChart"
           width="100%"
           height="400px"
-          data={data}
-          options={options}
+          data={gh?.filteredData}
+          options={gh?.chartOptions}
         />
       </Section>
     </div>
