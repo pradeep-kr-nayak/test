@@ -61,10 +61,11 @@ export const Table = styled.table<{ clickedColumn?: number }>`
   ${({ clickedColumn }) =>
     clickedColumn
       ? `
+    tbody , thead {
     tr {
         th:nth-child(${clickedColumn}) , td:nth-child(${clickedColumn}){
         background: #EDEFFE;
-    }}
+    }}}
   `
       : ""}
 `;

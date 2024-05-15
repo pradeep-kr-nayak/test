@@ -1,3 +1,4 @@
+import { useContext, useState } from "react";
 import {
   Counter,
   Title,
@@ -15,10 +16,14 @@ import { Post } from "./types";
 import { sortProps } from "../../types";
 import usePagination from "../hooks/usePagination";
 import { sortParams } from "../../constants";
+import { PostsDataContext } from "../container/post-context";
 
 const PER_PAGE = 5;
 
-export const TopPosts = (data: { posts: Post[] }) => {
+export const TopPosts = () => {
+  const { topPosts, setTopPosts } = useContext(PostsDataContext);
+  const [sortOrder, setSortOrder] = useState(true);
+  const [clickedColumn, setClickedColumn] = useState<number | undefined>();
   const {
     paginatedData,
     paginateLeft,
@@ -27,31 +32,49 @@ export const TopPosts = (data: { posts: Post[] }) => {
     totalCount,
     start,
     end,
-  } = usePagination(data.posts, PER_PAGE);
+  } = usePagination(topPosts, PER_PAGE);
 
-  const sortColumns = (prop: sortProps) => {
-    data.posts.sort((a, b) => b[prop] - a[prop]);
+  const sortColumns = (prop: sortProps, column: number) => {
+    const sortedPosts = [...topPosts].sort((a, b) =>
+      sortOrder ? b[prop] - a[prop] : a[prop] - b[prop]
+    );
+    setTopPosts(sortedPosts);
+    setSortOrder(!sortOrder);
+    setClickedColumn(column);
   };
 
   return (
     <TopPostsWrapper>
-      <Table clickedColumn={4}>
+      <Table clickedColumn={clickedColumn}>
         <thead>
           <tr>
             <th>Top 50 Posts</th>
-            <th onClick={() => sortColumns(sortParams.uniqueViews)}>
+            <th onClick={() => sortColumns(sortParams.uniqueViews, 2)}>
               Unique Page Views
+              {clickedColumn === 2 && (
+                <SortingIconAligner>
+                  <SortingIcon
+                    color="#161718"
+                    width={12}
+                    rotate={sortOrder ? 0 : 180}
+                  />
+                </SortingIconAligner>
+              )}
             </th>
-            <th onClick={() => sortColumns(sortParams.pageViews)}>
-              Page Views
-            </th>
-            <th onClick={() => sortColumns(sortParams.timeSpent)}>
+            <th>Page Views</th>
+            <th onClick={() => sortColumns(sortParams.timeSpent, 4)}>
               Time Spent
-              <SortingIconAligner>
-                <SortingIcon color="#161718" width={12} />
-              </SortingIconAligner>
+              {clickedColumn === 4 && (
+                <SortingIconAligner>
+                  <SortingIcon
+                    color="#161718"
+                    width={12}
+                    rotate={sortOrder ? 0 : 180}
+                  />
+                </SortingIconAligner>
+              )}
             </th>
-            <th onClick={() => sortColumns(sortParams.visitors)}>Visitors</th>
+            <th>Visitors</th>
           </tr>
         </thead>
         <tbody>
@@ -87,11 +110,11 @@ export const TopPosts = (data: { posts: Post[] }) => {
         </tbody>
         <tfoot>
           <tr>
-            <td>
+            <td colSpan={4}>
               {start} - {end} of
               {totalCount}
             </td>
-            <td colSpan={4}>
+            <td>
               <Arrow color="#555556" onClick={() => paginateLeft()} />
               <Arrow
                 color="#555556"
