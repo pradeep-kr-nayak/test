@@ -1,0 +1,31 @@
+{
+    "post_id": "1",
+    "title": "The Art of Storytelling",
+    "author": "Jane Doe",
+    "published_date": "2024-05-15T08:00:00Z",
+    "visited_content": "/articles/the-art-of-storytelling",
+    "traffic": {
+        "daily": {
+            "2024-05-01": 1000,
+            "2024-05-02": 120,
+            "2024-05-03": 3000,
+            "2024-05-04": 750,
+            "2024-05-05": 3450,
+            "2024-05-06": 987,
+            "2024-05-07": 1100,
+            "2024-05-08": 50,
+            "2024-05-09": 3400,
+            "2024-05-10": 2300,
+            "2024-05-11": 1100,
+            "2024-05-12": 340
+        }
+    },
+    "metrics": {
+        "total_time_hours": 50,
+        "avg_time_minutes": 5,
+        "page_views": 1000,
+        "unique_page_views": 800,
+        "visitors": 500,
+        "unique_visitors": 400
+    }
+}

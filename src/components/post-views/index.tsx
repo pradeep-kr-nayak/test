@@ -3,7 +3,6 @@ import { Chart } from "react-google-charts";
 import "@wojtekmaj/react-daterange-picker/dist/DateRangePicker.css";
 import "react-calendar/dist/Calendar.css";
 import { Section } from "../shared/shared.styles";
-import postData from "../../mock/hourly/post.json";
 
 import {
   FilterWrapper,
@@ -26,11 +25,7 @@ type Value = ValuePiece | [ValuePiece, ValuePiece];
 const Posts = () => {
   const [activeFilter, setActiveFilter] = useState(filterList[0]);
   const [value, onChange] = useState<Value>([new Date(), new Date()]);
-  const gh = getFilteredData({
-    postData,
-    activeFilter,
-  });
-  console.log(gh);
+  const chartData = getFilteredData(activeFilter);
 
   return (
     <div>
@@ -55,8 +50,8 @@ const Posts = () => {
           chartType="AreaChart"
           width="100%"
           height="400px"
-          data={gh?.filteredData}
-          options={gh?.chartOptions}
+          data={chartData?.filteredData}
+          options={chartData?.chartOptions}
         />
       </Section>
     </div>

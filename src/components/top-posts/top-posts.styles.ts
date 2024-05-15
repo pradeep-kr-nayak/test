@@ -7,6 +7,7 @@ export const TopPostsWrapper = styled(Section)`
 `;
 export const Table = styled.table`
   width: 100%;
+  table-layout: fixed;
   th {
     font-size: 16px;
     font-weight: 500;
@@ -19,6 +20,7 @@ export const Table = styled.table`
       font-size: 24px;
       line-height: 1.2;
       padding-bottom: 20px;
+      width: 560px;
     }
     &:last-child {
       padding-right: 20px;
@@ -33,6 +35,9 @@ export const Table = styled.table`
       padding: 14px 14px 14px 0;
       padding-left: 20px;
       vertical-align: middle;
+      &:first-child {
+        width: 560px;
+      }
       &:last-child {
         padding-right: 20px;
         border-right: none;
@@ -48,6 +53,7 @@ export const Table = styled.table`
         > * {
           margin-left: 20px;
           cursor: pointer;
+          display: inline-block;
         }
       }
     }

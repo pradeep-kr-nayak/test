@@ -64,6 +64,7 @@ export const DateRangePickerStyled = styled(DateRangePicker)`
   border: 1px solid #cccbcb;
   border-radius: 3px;
   box-shadow: none;
+  padding: 0 20px;
   .react-daterange-picker__wrapper {
     border: none;
   }

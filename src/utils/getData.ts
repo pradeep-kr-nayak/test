@@ -1,44 +1,89 @@
 import { filterList } from "../constants";
+import postHourlyData from "../mock/hourly-post.json";
+import postDailyData from "../mock/daily-post.json";
+import postWeeklyData from "../mock/weekly-post.json";
+import postMonthlyData from "../mock/monthly-post.json";
+import { getChartOptions } from "./chart-options";
 
-type PostData = {
-  title: string;
-  traffic: { hourly: { [key: string]: number } };
-};
-export const getChartOptions = (postData: PostData, filterType: string) => {
-  return {
-    title: postData.title,
-    hAxis: { title: filterType, titleTextStyle: { color: "#333" } },
-    vAxis: { minValue: 0 },
-    chartArea: { width: "90%", height: "70%" },
-    pointSize: 10,
-    colors: ["#328ec8"],
-    lineWidth: 5,
-  };
-};
-
-export const formHourlyData = (postData: PostData) => {
-  const hourlyTrafiic = postData.traffic.hourly;
-  return [
-    ["Hours", "Views"],
-    ...Object.keys(hourlyTrafiic).map((d) => {
-      const hour = d.split(":")[0];
-      return [hour, hourlyTrafiic[d]];
-    }),
-  ];
+const formHourlyData = () => {
+  const hourlyTraffic: { [key: string]: number } =
+    postHourlyData.traffic.hourly;
+  const axisLabels = ["Hours", "Views"];
+  return hourlyTraffic
+    ? [
+        axisLabels,
+        ...Object.keys(hourlyTraffic).map((d) => {
+          const hour = d.split(":")[0];
+          return [hour, hourlyTraffic[d]];
+        }),
+      ]
+    : [axisLabels];
 };
 
-type FilteredDataProps = {
-  postData: PostData;
-  activeFilter: string;
+const formDailyData = () => {
+  const dailyTraffic: { [key: string]: number } = postDailyData.traffic.daily;
+  return dailyTraffic
+    ? [
+        ["Days", "Views"],
+        ...Object.keys(dailyTraffic).map((d) => {
+          const day = new Date(d).toLocaleString("default", {
+            month: "short",
+            day: "numeric",
+          });
+          return [day, dailyTraffic[d]];
+        }),
+      ]
+    : [["Days", "Views"]];
 };
-export const getFilteredData = ({
-  postData,
-  activeFilter,
-}: FilteredDataProps) => {
+
+const formWeeklyData = () => {
+  const weeklyTraffic: { [key: string]: number } =
+    postWeeklyData.traffic.weekly;
+  return weeklyTraffic
+    ? [
+        ["Weeks", "Views"],
+        ...Object.keys(weeklyTraffic).map((d) => {
+          const hour = d.split(":")[0];
+          return [hour, weeklyTraffic[d]];
+        }),
+      ]
+    : [["Weeks", "Views"]];
+};
+
+const formMonthlyData = () => {
+  const monthlyTraffic: { [key: string]: number } =
+    postMonthlyData.traffic.monthly;
+  return monthlyTraffic
+    ? [
+        ["Days", "Views"],
+        ...Object.keys(monthlyTraffic).map((d) => {
+          const hour = d.split(":")[0];
+          return [hour, monthlyTraffic[d]];
+        }),
+      ]
+    : [["Months", "Views"]];
+};
+
+const prepareDataForChart = (activeFilter: string) => {
+  switch (activeFilter) {
+    case "Hourly":
+      return formHourlyData();
+    case "Daily":
+      return formDailyData();
+    case "Weekly":
+      return formWeeklyData();
+    case "Monthly":
+      return formMonthlyData();
+    default:
+      return formHourlyData();
+  }
+};
+
+export const getFilteredData = (activeFilter: string) => {
   if (filterList.indexOf(activeFilter) !== -1) {
     return {
-      chartOptions: getChartOptions(postData, activeFilter),
-      filteredData: formHourlyData(postData),
+      chartOptions: getChartOptions(activeFilter),
+      filteredData: prepareDataForChart(activeFilter),
     };
   } else {
     console.error("Invalid filter value");

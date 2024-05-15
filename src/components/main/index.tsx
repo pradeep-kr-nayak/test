@@ -4,6 +4,7 @@ import Posts from "../post-views";
 import { Metrics } from "../metrics";
 import { TopPosts } from "../top-posts";
 import { Section } from "../shared/shared.styles";
+import topPosts from "../../mock/top-posts.json";
 
 const Main = () => {
   return (
@@ -11,7 +12,7 @@ const Main = () => {
       <MainContent>
         <TabSwitcher>
           <TabsWrapper>
-            <TabSwitcher.Tab tabId={0}>
+            <TabSwitcher.Tab tabId={0} defaultOpen={true}>
               <Tab>Posts</Tab>
             </TabSwitcher.Tab>
             <TabSwitcher.Tab tabId={1}>
@@ -23,11 +24,9 @@ const Main = () => {
           </TabsWrapper>
 
           <TabSwitcher.TabPanel tabId={0}>
-            <div>
-              <Posts />
-              <Metrics />
-              <TopPosts />
-            </div>
+            <Posts />
+            <Metrics />
+            <TopPosts posts={topPosts} />
           </TabSwitcher.TabPanel>
           <TabSwitcher.TabPanel tabId={1}>
             <Section ispadded="true">Author Tab placeholder</Section>
