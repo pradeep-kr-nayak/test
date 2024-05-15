@@ -1,13 +1,9 @@
 import { filterList } from "../constants";
-import postHourlyData from "../mock/hourly-post.json";
-import postDailyData from "../mock/daily-post.json";
-import postWeeklyData from "../mock/weekly-post.json";
-import postMonthlyData from "../mock/monthly-post.json";
 import { getChartOptions } from "./chart-options";
+import { Post } from "../types";
 
-const formHourlyData = () => {
-  const hourlyTraffic: { [key: string]: number } =
-    postHourlyData.traffic.hourly;
+const formHourlyData = (filteredData: Post) => {
+  const hourlyTraffic = filteredData.traffic.hourly;
   const axisLabels = ["Hours", "Views"];
   return hourlyTraffic
     ? [
@@ -20,8 +16,8 @@ const formHourlyData = () => {
     : [axisLabels];
 };
 
-const formDailyData = () => {
-  const dailyTraffic: { [key: string]: number } = postDailyData.traffic.daily;
+const formDailyData = (filteredData: Post) => {
+  const dailyTraffic = filteredData.traffic.daily;
   return dailyTraffic
     ? [
         ["Days", "Views"],
@@ -36,9 +32,8 @@ const formDailyData = () => {
     : [["Days", "Views"]];
 };
 
-const formWeeklyData = () => {
-  const weeklyTraffic: { [key: string]: number } =
-    postWeeklyData.traffic.weekly;
+const formWeeklyData = (filteredData: Post) => {
+  const weeklyTraffic = filteredData.traffic.weekly;
   return weeklyTraffic
     ? [
         ["Weeks", "Views"],
@@ -50,9 +45,8 @@ const formWeeklyData = () => {
     : [["Weeks", "Views"]];
 };
 
-const formMonthlyData = () => {
-  const monthlyTraffic: { [key: string]: number } =
-    postMonthlyData.traffic.monthly;
+const formMonthlyData = (filteredData: Post) => {
+  const monthlyTraffic = filteredData.traffic.monthly;
   return monthlyTraffic
     ? [
         ["Days", "Views"],
@@ -64,52 +58,56 @@ const formMonthlyData = () => {
     : [["Months", "Views"]];
 };
 
-const prepareDataForChart = (activeFilter: string) => {
+const prepareDataForChart = (activeFilter: string, filteredData: Post) => {
   switch (activeFilter) {
     case "Hourly":
-      return formHourlyData();
+      return formHourlyData(filteredData);
     case "Daily":
-      return formDailyData();
+      return formDailyData(filteredData);
     case "Weekly":
-      return formWeeklyData();
+      return formWeeklyData(filteredData);
     case "Monthly":
-      return formMonthlyData();
+      return formMonthlyData(filteredData);
     default:
       return;
   }
 };
 
-export const getFilteredData = (activeFilter: string) => {
+export const getChartCompatibleData = (
+  activeFilter: string,
+  filteredData: Post
+) => {
   if (filterList.indexOf(activeFilter) !== -1) {
     return {
       chartOptions: getChartOptions(activeFilter),
-      filteredData: prepareDataForChart(activeFilter),
+      filteredData: prepareDataForChart(activeFilter, filteredData),
     };
   } else {
     console.error("Invalid filter value");
   }
 };
 
-export const getMetrics = (
-  activeFilter: string
-): {
-  avg_time_minutes: number;
-  page_views: number;
-  total_time_hours: number;
-  unique_page_views: number;
-  unique_visitors: number;
-  visitors: number;
-} => {
-  switch (activeFilter) {
-    case "Hourly":
-      return postHourlyData.metrics;
-    case "Daily":
-      return postDailyData.metrics;
-    case "Weekly":
-      return postWeeklyData.metrics;
-    case "Monthly":
-      return postMonthlyData.metrics;
-    default:
-      return postHourlyData.metrics;
-  }
-};
+/** may be not required */
+// export const getMetrics = (
+//   activeFilter: string
+// ): {
+//   avg_time_minutes: number;
+//   page_views: number;
+//   total_time_hours: number;
+//   unique_page_views: number;
+//   unique_visitors: number;
+//   visitors: number;
+// } => {
+//   switch (activeFilter) {
+//     case "Hourly":
+//       return postHourlyData.metrics;
+//     case "Daily":
+//       return postDailyData.metrics;
+//     case "Weekly":
+//       return postWeeklyData.metrics;
+//     case "Monthly":
+//       return postMonthlyData.metrics;
+//     default:
+//       return postHourlyData.metrics;
+//   }
+// };

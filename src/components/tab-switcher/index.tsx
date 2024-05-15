@@ -29,10 +29,10 @@ const Tab = ({
 }) => {
   const { activeTabId, updateTabId } = useContext(TabsContext);
   useEffect(() => {
-    if (defaultOpen) {
+    if (defaultOpen && !activeTabId) {
       updateTabId(tabId);
     }
-  }, [defaultOpen, tabId, updateTabId]);
+  }, [activeTabId, defaultOpen, tabId, updateTabId]);
 
   {
     return React.Children.map(children, (child) => {

@@ -1,10 +1,10 @@
 import React, { Dispatch, SetStateAction } from "react";
 import { useState } from "react";
-import { Post } from "../../types";
+import { TopPost } from "../../types";
 
 interface PostsDataInterface {
-  topPosts: Post[];
-  setTopPosts: Dispatch<SetStateAction<Post[]>>;
+  topPosts: TopPost[];
+  setTopPosts: Dispatch<SetStateAction<TopPost[]>>;
 }
 
 const initialPost = {
@@ -34,7 +34,7 @@ export const PostsData = ({
   posts,
 }: {
   children: React.ReactNode;
-  posts: Post[];
+  posts: TopPost[];
 }) => {
   const [topPosts, setTopPosts] = useState(posts);
   return (

@@ -14,19 +14,18 @@ import {
 } from "./filter-wrapper";
 import FunnelIcon from "../icons/funnel";
 import RefreshIcon from "../icons/refresh";
-import { getFilteredData } from "../../utils/getData";
+import { getChartCompatibleData } from "../../utils/getData";
 import { TimeFilters } from "./time-filters";
-import { FilterContext } from "../container/posts-context";
+import { FilterContext } from "../container/filter-context";
 
 type ValuePiece = Date | null;
 
 type Value = ValuePiece | [ValuePiece, ValuePiece];
 
 const Posts = () => {
-  const { activeFilter } = useContext(FilterContext);
+  const { activeFilter, filteredPosts } = useContext(FilterContext);
   const [value, onChange] = useState<Value>([new Date(), new Date()]);
-  const chartData = getFilteredData(activeFilter);
-
+  const chartData = getChartCompatibleData(activeFilter, filteredPosts);
   return (
     <div>
       <FilterWrapper>
@@ -36,7 +35,6 @@ const Posts = () => {
             onChange={onChange}
             value={value}
             maxDate={new Date()}
-            disabled
           />
           <FilterCountButton>
             <FunnelIcon />

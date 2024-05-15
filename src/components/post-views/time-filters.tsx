@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { FilterButton } from "./filter-wrapper";
 import { filterList } from "../../constants";
-import { FilterContext } from "../container/posts-context";
+import { FilterContext } from "../container/filter-context";
 
 export const TimeFilters = () => {
   const [activeIndex, setActiveIndex] = useState(0);

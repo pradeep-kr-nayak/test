@@ -1,14 +1,16 @@
 import { MainWrapper, MainContent, TabsWrapper, Tab } from "./styles";
 import TabSwitcher from "../tab-switcher";
 import Posts from "../post-views";
-import { Metrics } from "../metrics";
+import { MetricsSection } from "../metrics";
 import { TopPosts } from "../top-posts";
 import { Section } from "../shared/shared.styles";
 import topPosts from "../../mock/top-posts.json";
 import { PostsData } from "../container/top-post-context";
-import { FilteredPosts } from "../container/posts-context";
+import { PostData } from "../container/filter-context";
 
 const Main = () => {
+  console.log("re-render");
+
   return (
     <MainWrapper>
       <MainContent>
@@ -26,10 +28,10 @@ const Main = () => {
           </TabsWrapper>
 
           <TabSwitcher.TabPanel tabId={0}>
-            <FilteredPosts>
+            <PostData>
               <Posts />
-              <Metrics />
-            </FilteredPosts>
+              <MetricsSection />
+            </PostData>
             <PostsData posts={topPosts}>
               <TopPosts />
             </PostsData>

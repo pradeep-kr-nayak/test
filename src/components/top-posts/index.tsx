@@ -12,7 +12,7 @@ import {
 import { Arrow } from "../icons/arrow";
 import { ExternalLinkIcon } from "../icons/external-link";
 import { SortingIcon } from "../icons/sorting";
-import { Post } from "../../types";
+import { TopPost } from "../../types";
 import { sortProps } from "../../types";
 import usePagination from "../hooks/usePagination";
 import { sortParams } from "../../constants";
@@ -78,9 +78,9 @@ export const TopPosts = () => {
           </tr>
         </thead>
         <tbody>
-          {paginatedData.map((post: Post, index: number) => {
+          {paginatedData.map((post: TopPost, index: number) => {
             return (
-              <tr>
+              <tr key={index}>
                 <td>
                   <CellContent>
                     <Counter>{currentPage * PER_PAGE + (index + 1)}</Counter>
