@@ -2,4 +2,6 @@
 
 # run yarn in root directory
 
-# to run the local server yarn run build
+# to run the local server yarn run dev
+
+# go to localhost:5173
