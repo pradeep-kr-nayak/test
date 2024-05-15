@@ -1,46 +1,67 @@
 import {
   Counter,
-  PostDetail,
   Title,
   PostMeta,
   PostType,
-  PublishedOn,
-  Author,
-  Category,
   Table,
   CellContent,
   TopPostsWrapper,
+  SortingIconAligner,
 } from "./top-posts.styles";
 import { Arrow } from "../icons/arrow";
 import { ExternalLinkIcon } from "../icons/external-link";
+import { SortingIcon } from "../icons/sorting";
 import { Post } from "./types";
-import { useState } from "react";
+import { sortProps } from "../../types";
+import usePagination from "../hooks/usePagination";
+import { sortParams } from "../../constants";
 
 const PER_PAGE = 5;
 
 export const TopPosts = (data: { posts: Post[] }) => {
-  const [currentIndex, setNextCount] = useState(0);
+  const {
+    paginatedData,
+    paginateLeft,
+    paginateRight,
+    currentPage,
+    totalCount,
+    start,
+    end,
+  } = usePagination(data.posts, PER_PAGE);
+
+  const sortColumns = (prop: sortProps) => {
+    data.posts.sort((a, b) => b[prop] - a[prop]);
+  };
 
   return (
     <TopPostsWrapper>
-      <Table>
+      <Table clickedColumn={4}>
         <thead>
           <tr>
             <th>Top 50 Posts</th>
-            <th>Unique Page Views</th>
-            <th>Page Views</th>
-            <th>Time Spent</th>
-            <th>Visitors</th>
+            <th onClick={() => sortColumns(sortParams.uniqueViews)}>
+              Unique Page Views
+            </th>
+            <th onClick={() => sortColumns(sortParams.pageViews)}>
+              Page Views
+            </th>
+            <th onClick={() => sortColumns(sortParams.timeSpent)}>
+              Time Spent
+              <SortingIconAligner>
+                <SortingIcon color="#161718" width={12} />
+              </SortingIconAligner>
+            </th>
+            <th onClick={() => sortColumns(sortParams.visitors)}>Visitors</th>
           </tr>
         </thead>
         <tbody>
-          {data.posts.map((post: Post, index: number) => {
-            return index >= currentIndex && index < currentIndex + 5 ? (
+          {paginatedData.map((post: Post, index: number) => {
+            return (
               <tr>
                 <td>
                   <CellContent>
-                    <Counter>{index + 1}</Counter>
-                    <PostDetail>
+                    <Counter>{currentPage * PER_PAGE + (index + 1)}</Counter>
+                    <div>
                       <Title>
                         {post.post_title}
                         <a href={post.link_url} target="_blank">
@@ -49,11 +70,11 @@ export const TopPosts = (data: { posts: Post[] }) => {
                       </Title>
                       <PostMeta>
                         <PostType>{post.post_type}</PostType>
-                        <PublishedOn>{post.published_date}</PublishedOn>
-                        <Author>{post.author_name}</Author>
-                        <Category>{post.category}</Category>
+                        <div>{post.published_date}</div>
+                        <div>{post.author_name}</div>
+                        <div>{post.category}</div>
                       </PostMeta>
-                    </PostDetail>
+                    </div>
                   </CellContent>
                 </td>
                 <td>{post.unique_page_views}</td>
@@ -61,30 +82,21 @@ export const TopPosts = (data: { posts: Post[] }) => {
                 <td>{post.time_spent}</td>
                 <td>{post.visitors_count}</td>
               </tr>
-            ) : null;
+            );
           })}
         </tbody>
         <tfoot>
           <tr>
             <td>
-              {currentIndex + 1}-{currentIndex + PER_PAGE} of{" "}
-              {data.posts.length}
+              {start} - {end} of
+              {totalCount}
             </td>
             <td colSpan={4}>
+              <Arrow color="#555556" onClick={() => paginateLeft()} />
               <Arrow
                 color="#555556"
-                onClick={() =>
-                  currentIndex > 0 ? setNextCount(currentIndex - 5) : {}
-                }
-              />
-              <Arrow
-                color="#555556"
+                onClick={() => paginateRight()}
                 rotate={180}
-                onClick={() =>
-                  currentIndex < data.posts.length - PER_PAGE
-                    ? setNextCount(currentIndex + 5)
-                    : {}
-                }
               />
             </td>
           </tr>

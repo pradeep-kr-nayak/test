@@ -7,7 +7,7 @@
         "category": "Travel & Adventure",
         "unique_page_views": 5000,
         "page_views": 7000,
-        "time_spent": "00:15:00",
+        "time_spent": 15,
         "visitors_count": 3000,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -19,7 +19,7 @@
         "category": "Nature & Exploration",
         "unique_page_views": 8000,
         "page_views": 10000,
-        "time_spent": "00:20:00",
+        "time_spent": 20,
         "visitors_count": 5000,
         "link_url": "hhttps://www.cntraveler.com/cruise"
     },
@@ -31,7 +31,7 @@
         "category": "Sports & Outdoor",
         "unique_page_views": 6000,
         "page_views": 8500,
-        "time_spent": "00:18:00",
+        "time_spent": 18,
         "visitors_count": 4000,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -43,7 +43,7 @@
         "category": "Photography",
         "unique_page_views": 7000,
         "page_views": 9500,
-        "time_spent": "00:12:00",
+        "time_spent": 12,
         "visitors_count": 4500,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -55,7 +55,7 @@
         "category": "History & Archaeology",
         "unique_page_views": 5500,
         "page_views": 7500,
-        "time_spent": "00:22:00",
+        "time_spent": 22,
         "visitors_count": 3200,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -67,7 +67,7 @@
         "category": "Travel & Adventure",
         "unique_page_views": 4800,
         "page_views": 6500,
-        "time_spent": "00:16:00",
+        "time_spent": 16,
         "visitors_count": 2800,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -79,7 +79,7 @@
         "category": "Photography",
         "unique_page_views": 5200,
         "page_views": 7000,
-        "time_spent": "00:14:00",
+        "time_spent": 14,
         "visitors_count": 3300,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -91,7 +91,7 @@
         "category": "Travel & Adventure",
         "unique_page_views": 7500,
         "page_views": 10500,
-        "time_spent": "00:25:00",
+        "time_spent": 25,
         "visitors_count": 5500,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -103,7 +103,7 @@
         "category": "Photography",
         "unique_page_views": 6000,
         "page_views": 8000,
-        "time_spent": "00:17:00",
+        "time_spent": 17,
         "visitors_count": 3700,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -115,7 +115,7 @@
         "category": "Sports & Outdoor",
         "unique_page_views": 5500,
         "page_views": 7200,
-        "time_spent": "00:19:00",
+        "time_spent": 19,
         "visitors_count": 3200,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -127,7 +127,7 @@
         "category": "Travel & Adventure",
         "unique_page_views": 5000,
         "page_views": 7000,
-        "time_spent": "00:15:00",
+        "time_spent": 15,
         "visitors_count": 3000,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -139,7 +139,7 @@
         "category": "Nature & Exploration",
         "unique_page_views": 8000,
         "page_views": 10000,
-        "time_spent": "00:20:00",
+        "time_spent": 20,
         "visitors_count": 5000,
         "link_url": "hhttps://www.cntraveler.com/cruise"
     },
@@ -151,7 +151,7 @@
         "category": "Sports & Outdoor",
         "unique_page_views": 6000,
         "page_views": 8500,
-        "time_spent": "00:18:00",
+        "time_spent": 18,
         "visitors_count": 4000,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -163,7 +163,7 @@
         "category": "Photography",
         "unique_page_views": 7000,
         "page_views": 9500,
-        "time_spent": "00:12:00",
+        "time_spent": 12,
         "visitors_count": 4500,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -175,7 +175,7 @@
         "category": "History & Archaeology",
         "unique_page_views": 5500,
         "page_views": 7500,
-        "time_spent": "00:22:00",
+        "time_spent": 22,
         "visitors_count": 3200,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -187,7 +187,7 @@
         "category": "Travel & Adventure",
         "unique_page_views": 4800,
         "page_views": 6500,
-        "time_spent": "00:16:00",
+        "time_spent": 16,
         "visitors_count": 2800,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -199,7 +199,7 @@
         "category": "Photography",
         "unique_page_views": 5200,
         "page_views": 7000,
-        "time_spent": "00:14:00",
+        "time_spent": 14,
         "visitors_count": 3300,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -211,7 +211,7 @@
         "category": "Travel & Adventure",
         "unique_page_views": 7500,
         "page_views": 10500,
-        "time_spent": "00:25:00",
+        "time_spent": 25,
         "visitors_count": 5500,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -223,7 +223,7 @@
         "category": "Photography",
         "unique_page_views": 6000,
         "page_views": 8000,
-        "time_spent": "00:17:00",
+        "time_spent": 17,
         "visitors_count": 3700,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -235,7 +235,7 @@
         "category": "Sports & Outdoor",
         "unique_page_views": 5500,
         "page_views": 7200,
-        "time_spent": "00:19:00",
+        "time_spent": 19,
         "visitors_count": 3200,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -247,7 +247,7 @@
         "category": "Travel & Adventure",
         "unique_page_views": 5000,
         "page_views": 7000,
-        "time_spent": "00:15:00",
+        "time_spent": 15,
         "visitors_count": 3000,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -259,7 +259,7 @@
         "category": "Nature & Exploration",
         "unique_page_views": 8000,
         "page_views": 10000,
-        "time_spent": "00:20:00",
+        "time_spent": 20,
         "visitors_count": 5000,
         "link_url": "hhttps://www.cntraveler.com/cruise"
     },
@@ -271,7 +271,7 @@
         "category": "Sports & Outdoor",
         "unique_page_views": 6000,
         "page_views": 8500,
-        "time_spent": "00:18:00",
+        "time_spent": 18,
         "visitors_count": 4000,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -283,7 +283,7 @@
         "category": "Photography",
         "unique_page_views": 7000,
         "page_views": 9500,
-        "time_spent": "00:12:00",
+        "time_spent": 12,
         "visitors_count": 4500,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -295,7 +295,7 @@
         "category": "History & Archaeology",
         "unique_page_views": 5500,
         "page_views": 7500,
-        "time_spent": "00:22:00",
+        "time_spent": 22,
         "visitors_count": 3200,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -307,7 +307,7 @@
         "category": "Travel & Adventure",
         "unique_page_views": 4800,
         "page_views": 6500,
-        "time_spent": "00:16:00",
+        "time_spent": 16,
         "visitors_count": 2800,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -319,7 +319,7 @@
         "category": "Photography",
         "unique_page_views": 5200,
         "page_views": 7000,
-        "time_spent": "00:14:00",
+        "time_spent": 14,
         "visitors_count": 3300,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -331,7 +331,7 @@
         "category": "Travel & Adventure",
         "unique_page_views": 7500,
         "page_views": 10500,
-        "time_spent": "00:25:00",
+        "time_spent": 25,
         "visitors_count": 5500,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -343,7 +343,7 @@
         "category": "Photography",
         "unique_page_views": 6000,
         "page_views": 8000,
-        "time_spent": "00:17:00",
+        "time_spent": 17,
         "visitors_count": 3700,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -355,7 +355,7 @@
         "category": "Sports & Outdoor",
         "unique_page_views": 5500,
         "page_views": 7200,
-        "time_spent": "00:19:00",
+        "time_spent": 19,
         "visitors_count": 3200,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -367,7 +367,7 @@
         "category": "Travel & Adventure",
         "unique_page_views": 5000,
         "page_views": 7000,
-        "time_spent": "00:15:00",
+        "time_spent": 15,
         "visitors_count": 3000,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -379,7 +379,7 @@
         "category": "Nature & Exploration",
         "unique_page_views": 8000,
         "page_views": 10000,
-        "time_spent": "00:20:00",
+        "time_spent": 20,
         "visitors_count": 5000,
         "link_url": "hhttps://www.cntraveler.com/cruise"
     },
@@ -391,7 +391,7 @@
         "category": "Sports & Outdoor",
         "unique_page_views": 6000,
         "page_views": 8500,
-        "time_spent": "00:18:00",
+        "time_spent": 18,
         "visitors_count": 4000,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -403,7 +403,7 @@
         "category": "Photography",
         "unique_page_views": 7000,
         "page_views": 9500,
-        "time_spent": "00:12:00",
+        "time_spent": 12,
         "visitors_count": 4500,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -415,7 +415,7 @@
         "category": "History & Archaeology",
         "unique_page_views": 5500,
         "page_views": 7500,
-        "time_spent": "00:22:00",
+        "time_spent": 22,
         "visitors_count": 3200,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -427,7 +427,7 @@
         "category": "Travel & Adventure",
         "unique_page_views": 4800,
         "page_views": 6500,
-        "time_spent": "00:16:00",
+        "time_spent": 16,
         "visitors_count": 2800,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -439,7 +439,7 @@
         "category": "Photography",
         "unique_page_views": 5200,
         "page_views": 7000,
-        "time_spent": "00:14:00",
+        "time_spent": 14,
         "visitors_count": 3300,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -451,7 +451,7 @@
         "category": "Travel & Adventure",
         "unique_page_views": 7500,
         "page_views": 10500,
-        "time_spent": "00:25:00",
+        "time_spent": 25,
         "visitors_count": 5500,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -463,7 +463,7 @@
         "category": "Photography",
         "unique_page_views": 6000,
         "page_views": 8000,
-        "time_spent": "00:17:00",
+        "time_spent": 17,
         "visitors_count": 3700,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -475,7 +475,7 @@
         "category": "Sports & Outdoor",
         "unique_page_views": 5500,
         "page_views": 7200,
-        "time_spent": "00:19:00",
+        "time_spent": 19,
         "visitors_count": 3200,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -487,7 +487,7 @@
         "category": "Travel & Adventure",
         "unique_page_views": 5000,
         "page_views": 7000,
-        "time_spent": "00:15:00",
+        "time_spent": 15,
         "visitors_count": 3000,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -499,7 +499,7 @@
         "category": "Nature & Exploration",
         "unique_page_views": 8000,
         "page_views": 10000,
-        "time_spent": "00:20:00",
+        "time_spent": 20,
         "visitors_count": 5000,
         "link_url": "hhttps://www.cntraveler.com/cruise"
     },
@@ -511,7 +511,7 @@
         "category": "Sports & Outdoor",
         "unique_page_views": 6000,
         "page_views": 8500,
-        "time_spent": "00:18:00",
+        "time_spent": 18,
         "visitors_count": 4000,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -523,7 +523,7 @@
         "category": "Photography",
         "unique_page_views": 7000,
         "page_views": 9500,
-        "time_spent": "00:12:00",
+        "time_spent": 12,
         "visitors_count": 4500,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -535,7 +535,7 @@
         "category": "History & Archaeology",
         "unique_page_views": 5500,
         "page_views": 7500,
-        "time_spent": "00:22:00",
+        "time_spent": 22,
         "visitors_count": 3200,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -547,7 +547,7 @@
         "category": "Travel & Adventure",
         "unique_page_views": 4800,
         "page_views": 6500,
-        "time_spent": "00:16:00",
+        "time_spent": 16,
         "visitors_count": 2800,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -559,7 +559,7 @@
         "category": "Photography",
         "unique_page_views": 5200,
         "page_views": 7000,
-        "time_spent": "00:14:00",
+        "time_spent": 14,
         "visitors_count": 3300,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -571,7 +571,7 @@
         "category": "Travel & Adventure",
         "unique_page_views": 7500,
         "page_views": 10500,
-        "time_spent": "00:25:00",
+        "time_spent": 25,
         "visitors_count": 5500,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -583,7 +583,7 @@
         "category": "Photography",
         "unique_page_views": 6000,
         "page_views": 8000,
-        "time_spent": "00:17:00",
+        "time_spent": 17,
         "visitors_count": 3700,
         "link_url": "https://www.cntraveler.com/cruise"
     },
@@ -595,7 +595,7 @@
         "category": "Sports & Outdoor",
         "unique_page_views": 5500,
         "page_views": 7200,
-        "time_spent": "00:19:00",
+        "time_spent": 19,
         "visitors_count": 3200,
         "link_url": "https://www.cntraveler.com/cruise"
     }

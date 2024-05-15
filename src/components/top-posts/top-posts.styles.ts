@@ -5,14 +5,14 @@ export const TopPostsWrapper = styled(Section)`
   padding-left: 0;
   padding-right: 0;
 `;
-export const Table = styled.table`
+export const Table = styled.table<{ clickedColumn?: number }>`
   width: 100%;
   table-layout: fixed;
   th {
     font-size: 16px;
     font-weight: 500;
     border-right: 1px solid #cccbcb;
-    padding-top: 20px;
+    padding-top: 16px;
     padding-left: 20px;
     text-align: left;
     &:first-child {
@@ -58,6 +58,15 @@ export const Table = styled.table`
       }
     }
   }
+  ${({ clickedColumn }) =>
+    clickedColumn
+      ? `
+    tr {
+        th:nth-child(${clickedColumn}) , td:nth-child(${clickedColumn}){
+        background: #EDEFFE;
+    }}
+  `
+      : ""}
 `;
 
 export const CellContent = styled.div`
@@ -68,7 +77,6 @@ export const Counter = styled.div`
   font-size: 18px;
   font-weight: 600;
 `;
-export const PostDetail = styled.div``;
 export const Title = styled.div`
   font-size: 16px;
   font-weight: 500;
@@ -78,7 +86,6 @@ export const Title = styled.div`
     margin-left: 10px;
   }
 `;
-export const PostLinkIcon = styled.div``;
 export const PostMeta = styled.div`
   display: flex;
   > * {
@@ -91,8 +98,9 @@ export const PostType = styled.div`
   font-weight: bold;
   color: #575657;
 `;
-export const Author = styled.div``;
-export const Category = styled.div``;
-export const PublishedOn = styled.div``;
 
-export const PrevNext = styled.div``;
+export const SortingIconAligner = styled.div`
+  display: inline-block;
+  margin-left: 6px;
+  cursor: pointer;
+`;
