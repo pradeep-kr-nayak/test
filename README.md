@@ -1,7 +1,9 @@
 # React + TypeScript + Vite
 
-# run yarn in root directory
+- React + TypeScript + Vite
 
-# to run the local server yarn run dev
+- run yarn in root directory
 
-# go to localhost:5173
+- to run the local server yarn run dev
+
+- go to localhost:5173
