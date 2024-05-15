@@ -111,8 +111,7 @@ export const TopPosts = () => {
         <tfoot>
           <tr>
             <td colSpan={4}>
-              {start} - {end} of
-              {totalCount}
+              {start} - {end} of {totalCount}
             </td>
             <td>
               <Arrow color="#555556" onClick={() => paginateLeft()} />
