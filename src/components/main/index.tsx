@@ -5,7 +5,8 @@ import { Metrics } from "../metrics";
 import { TopPosts } from "../top-posts";
 import { Section } from "../shared/shared.styles";
 import topPosts from "../../mock/top-posts.json";
-import { PostsData } from "../container/post-context";
+import { PostsData } from "../container/top-post-context";
+import { FilteredPosts } from "../container/posts-context";
 
 const Main = () => {
   return (
@@ -25,13 +26,13 @@ const Main = () => {
           </TabsWrapper>
 
           <TabSwitcher.TabPanel tabId={0}>
-            <PostsData posts={topPosts}>
+            <FilteredPosts>
               <Posts />
               <Metrics />
+            </FilteredPosts>
+            <PostsData posts={topPosts}>
               <TopPosts />
             </PostsData>
-            {/* <PostsDataContext.Provider value={{ topPosts }}>
-            </PostsDataContext.Provider> */}
           </TabSwitcher.TabPanel>
           <TabSwitcher.TabPanel tabId={1}>
             <Section ispadded="true">Author Tab placeholder</Section>

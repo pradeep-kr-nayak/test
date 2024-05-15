@@ -14,10 +14,10 @@
         }
     },
     "metrics": {
-        "total_time_hours": 50,
-        "avg_time_minutes": 5,
-        "page_views": 1000,
-        "unique_page_views": 800,
+        "total_time_hours": 750,
+        "avg_time_minutes": 235,
+        "page_views": 1700,
+        "unique_page_views": 700,
         "visitors": 500,
         "unique_visitors": 400
     }

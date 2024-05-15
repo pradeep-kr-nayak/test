@@ -75,7 +75,7 @@ const prepareDataForChart = (activeFilter: string) => {
     case "Monthly":
       return formMonthlyData();
     default:
-      return formHourlyData();
+      return;
   }
 };
 
@@ -87,5 +87,29 @@ export const getFilteredData = (activeFilter: string) => {
     };
   } else {
     console.error("Invalid filter value");
+  }
+};
+
+export const getMetrics = (
+  activeFilter: string
+): {
+  avg_time_minutes: number;
+  page_views: number;
+  total_time_hours: number;
+  unique_page_views: number;
+  unique_visitors: number;
+  visitors: number;
+} => {
+  switch (activeFilter) {
+    case "Hourly":
+      return postHourlyData.metrics;
+    case "Daily":
+      return postDailyData.metrics;
+    case "Weekly":
+      return postWeeklyData.metrics;
+    case "Monthly":
+      return postMonthlyData.metrics;
+    default:
+      return postHourlyData.metrics;
   }
 };

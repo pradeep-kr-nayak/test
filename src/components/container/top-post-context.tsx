@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useEffect } from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { useState } from "react";
 import { Post } from "../../types";
 
@@ -20,6 +20,10 @@ const initialPost = {
   link_url: "",
 };
 
+/**
+ * Context to manage List of Top 50 Posts
+ * updating the sorted data
+ */
 export const PostsDataContext = React.createContext<PostsDataInterface>({
   topPosts: [initialPost],
   setTopPosts: () => null,
@@ -33,15 +37,9 @@ export const PostsData = ({
   posts: Post[];
 }) => {
   const [topPosts, setTopPosts] = useState(posts);
-  useEffect(() => {
-    console.log("qwerty");
-  }, [topPosts]);
   return (
     <PostsDataContext.Provider value={{ topPosts, setTopPosts }}>
-      <>
-        {console.log("63478462842389")}
-        {children}
-      </>
+      <>{children}</>
     </PostsDataContext.Provider>
   );
 };

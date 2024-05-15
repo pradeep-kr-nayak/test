@@ -105,3 +105,7 @@ export const SortingIconAligner = styled.div`
   margin-left: 6px;
   cursor: pointer;
 `;
+
+export const InlineBlock = styled.div`
+  display: inline-block;
+`;

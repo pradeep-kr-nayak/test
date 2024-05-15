@@ -12,11 +12,11 @@ import {
 import { Arrow } from "../icons/arrow";
 import { ExternalLinkIcon } from "../icons/external-link";
 import { SortingIcon } from "../icons/sorting";
-import { Post } from "./types";
+import { Post } from "../../types";
 import { sortProps } from "../../types";
 import usePagination from "../hooks/usePagination";
 import { sortParams } from "../../constants";
-import { PostsDataContext } from "../container/post-context";
+import { PostsDataContext } from "../container/top-post-context";
 
 const PER_PAGE = 5;
 

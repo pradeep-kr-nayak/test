@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Chart } from "react-google-charts";
 import "@wojtekmaj/react-daterange-picker/dist/DateRangePicker.css";
 import "react-calendar/dist/Calendar.css";
@@ -16,14 +16,14 @@ import FunnelIcon from "../icons/funnel";
 import RefreshIcon from "../icons/refresh";
 import { getFilteredData } from "../../utils/getData";
 import { TimeFilters } from "./time-filters";
-import { filterList } from "../../constants";
+import { FilterContext } from "../container/posts-context";
 
 type ValuePiece = Date | null;
 
 type Value = ValuePiece | [ValuePiece, ValuePiece];
 
 const Posts = () => {
-  const [activeFilter, setActiveFilter] = useState(filterList[0]);
+  const { activeFilter } = useContext(FilterContext);
   const [value, onChange] = useState<Value>([new Date(), new Date()]);
   const chartData = getFilteredData(activeFilter);
 
@@ -31,8 +31,13 @@ const Posts = () => {
     <div>
       <FilterWrapper>
         <FiltersLeft>
-          <TimeFilters setActiveFilter={setActiveFilter} />
-          <DateRangePickerStyled onChange={onChange} value={value} />
+          <TimeFilters />
+          <DateRangePickerStyled
+            onChange={onChange}
+            value={value}
+            maxDate={new Date()}
+            disabled
+          />
           <FilterCountButton>
             <FunnelIcon />
             Filters

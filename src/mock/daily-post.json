@@ -21,11 +21,11 @@
         }
     },
     "metrics": {
-        "total_time_hours": 50,
-        "avg_time_minutes": 5,
+        "total_time_hours": 500,
+        "avg_time_minutes": 50,
         "page_views": 1000,
         "unique_page_views": 800,
-        "visitors": 500,
-        "unique_visitors": 400
+        "visitors": 5000,
+        "unique_visitors": 40
     }
 }

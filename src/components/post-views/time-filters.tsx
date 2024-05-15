@@ -1,13 +1,11 @@
-import { Dispatch, SetStateAction, useState } from "react";
+import { useState, useContext } from "react";
 import { FilterButton } from "./filter-wrapper";
 import { filterList } from "../../constants";
+import { FilterContext } from "../container/posts-context";
 
-export const TimeFilters = ({
-  setActiveFilter,
-}: {
-  setActiveFilter: Dispatch<SetStateAction<string>>;
-}) => {
+export const TimeFilters = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const { setActiveFilter } = useContext(FilterContext);
 
   const selectFilter = (index: number) => {
     setActiveIndex(index);
