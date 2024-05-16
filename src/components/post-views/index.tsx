@@ -27,14 +27,13 @@ const Posts = () => {
   const [trafficData, setTrafficData] = useState<
     { [key: string]: number } | undefined
   >(initialTrafficData);
-
   const chartData =
-    activeFilter === "hourly"
+    activeFilter === "Hourly"
       ? getChartCompatibleDataForHourly(activeFilter, filteredPosts)
       : getChartCompatibleData(activeFilter, trafficData);
 
   const [startDate, setSDate] = useState("2023-07-01");
-  const [endDate, setEDate] = useState("2023-12-01");
+  const [endDate, setEDate] = useState("2024-04-01");
 
   const setStartDate = (e: React.SyntheticEvent) => {
     setSDate((e.target as HTMLInputElement).value);
@@ -75,6 +74,7 @@ const Posts = () => {
               type="date"
               onChange={(e) => setEndDate(e)}
               value={endDate}
+              max="2024-06-15"
             />
           </DateRangePickerHTML5>
           <FilterCountButton>
