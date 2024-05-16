@@ -1,6 +1,8 @@
 import { filterList } from "../constants";
-import { getChartOptions } from "./chart-options";
 import { Post } from "../types";
+import { getChartOptions } from "./chart-options";
+
+type trafficEntity = { [key: string]: number };
 
 const formHourlyData = (filteredData: Post) => {
   const hourlyTraffic = filteredData.traffic.hourly;
@@ -16,8 +18,8 @@ const formHourlyData = (filteredData: Post) => {
     : [axisLabels];
 };
 
-const formDailyData = (filteredData: Post) => {
-  const dailyTraffic = filteredData.traffic.daily;
+const formDailyData = (filteredData: trafficEntity) => {
+  const dailyTraffic = filteredData;
   return dailyTraffic
     ? [
         ["Days", "Views"],
@@ -32,8 +34,8 @@ const formDailyData = (filteredData: Post) => {
     : [["Days", "Views"]];
 };
 
-const formWeeklyData = (filteredData: Post) => {
-  const weeklyTraffic = filteredData.traffic.weekly;
+const formWeeklyData = (filteredData: trafficEntity) => {
+  const weeklyTraffic = filteredData;
   return weeklyTraffic
     ? [
         ["Weeks", "Views"],
@@ -45,8 +47,8 @@ const formWeeklyData = (filteredData: Post) => {
     : [["Weeks", "Views"]];
 };
 
-const formMonthlyData = (filteredData: Post) => {
-  const monthlyTraffic = filteredData.traffic.monthly;
+const formMonthlyData = (filteredData: trafficEntity) => {
+  const monthlyTraffic = filteredData;
   return monthlyTraffic
     ? [
         ["Days", "Views"],
@@ -58,16 +60,17 @@ const formMonthlyData = (filteredData: Post) => {
     : [["Months", "Views"]];
 };
 
-const prepareDataForChart = (activeFilter: string, filteredData: Post) => {
+const prepareDataForChart = (
+  activeFilter: string,
+  trafficData: trafficEntity
+) => {
   switch (activeFilter) {
-    case "Hourly":
-      return formHourlyData(filteredData);
     case "Daily":
-      return formDailyData(filteredData);
+      return formDailyData(trafficData);
     case "Weekly":
-      return formWeeklyData(filteredData);
+      return formWeeklyData(trafficData);
     case "Monthly":
-      return formMonthlyData(filteredData);
+      return formMonthlyData(trafficData);
     default:
       return;
   }
@@ -75,39 +78,28 @@ const prepareDataForChart = (activeFilter: string, filteredData: Post) => {
 
 export const getChartCompatibleData = (
   activeFilter: string,
-  filteredData: Post
+  trafficData?: { [key: string]: number }
 ) => {
-  if (filterList.indexOf(activeFilter) !== -1) {
+  if (filterList.indexOf(activeFilter) !== -1 && trafficData) {
     return {
       chartOptions: getChartOptions(activeFilter),
-      filteredData: prepareDataForChart(activeFilter, filteredData),
+      filteredData: prepareDataForChart(activeFilter, trafficData),
     };
   } else {
-    console.error("Invalid filter value");
+    // log error
   }
 };
 
-/** may be not required */
-// export const getMetrics = (
-//   activeFilter: string
-// ): {
-//   avg_time_minutes: number;
-//   page_views: number;
-//   total_time_hours: number;
-//   unique_page_views: number;
-//   unique_visitors: number;
-//   visitors: number;
-// } => {
-//   switch (activeFilter) {
-//     case "Hourly":
-//       return postHourlyData.metrics;
-//     case "Daily":
-//       return postDailyData.metrics;
-//     case "Weekly":
-//       return postWeeklyData.metrics;
-//     case "Monthly":
-//       return postMonthlyData.metrics;
-//     default:
-//       return postHourlyData.metrics;
-//   }
-// };
+export const getChartCompatibleDataForHourly = (
+  activeFilter: string,
+  filteredData?: Post
+) => {
+  if (filteredData && filterList.indexOf(activeFilter) !== -1) {
+    return {
+      chartOptions: getChartOptions(activeFilter),
+      filteredData: formHourlyData(filteredData),
+    };
+  } else {
+    // log error
+  }
+};

@@ -4,8 +4,9 @@ import { filterList } from "../../constants";
 import { FilterContext } from "../container/filter-context";
 
 export const TimeFilters = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const { setActiveFilter } = useContext(FilterContext);
+  const { activeFilter, setActiveFilter } = useContext(FilterContext);
+  const defaultActiveIndex = filterList.indexOf(activeFilter);
+  const [activeIndex, setActiveIndex] = useState(defaultActiveIndex);
 
   const selectFilter = (index: number) => {
     setActiveIndex(index);

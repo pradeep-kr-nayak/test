@@ -9,8 +9,6 @@ import { PostsData } from "../container/top-post-context";
 import { PostData } from "../container/filter-context";
 
 const Main = () => {
-  console.log("re-render");
-
   return (
     <MainWrapper>
       <MainContent>

@@ -49,6 +49,9 @@ const defaultContextValue = {
   setFilteredPosts: () => null,
   setActiveFilter: () => null,
   activeFilter: filterList[0],
+  datesFilter: [new Date(), new Date()],
+  trafficData: { "": 0 },
+  setTrafficData: () => null,
 };
 
 export const FilterContext = createContext<{
@@ -56,6 +59,10 @@ export const FilterContext = createContext<{
   setFilteredPosts: Dispatch<SetStateAction<Post>>;
   setActiveFilter: Dispatch<SetStateAction<string>>;
   activeFilter: string;
+  trafficData?: { [key: string]: number };
+  setTrafficData: Dispatch<
+    SetStateAction<{ [key: string]: number } | undefined>
+  >;
 }>(defaultContextValue);
 
 export const PostData = ({
@@ -66,7 +73,8 @@ export const PostData = ({
   post?: Post;
 }) => {
   const [filteredPosts, setFilteredPosts] = useState(post);
-  const [activeFilter, setActiveFilter] = useState(filterList[0]);
+  const [activeFilter, setActiveFilter] = useState(filterList[2]);
+  const [trafficData, setTrafficData] = useState(post.traffic.monthly);
 
   useEffect(() => {
     const fetchFilteredPosts = () => {
@@ -101,6 +109,8 @@ export const PostData = ({
         setFilteredPosts,
         activeFilter,
         setActiveFilter,
+        trafficData,
+        setTrafficData,
       }}
     >
       {children}

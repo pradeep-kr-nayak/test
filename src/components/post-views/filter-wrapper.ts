@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import DateRangePicker from "@wojtekmaj/react-daterange-picker";
 
 export const FilterWrapper = styled.div`
   margin-top: 16px;
@@ -59,19 +58,8 @@ export const RefreshButton = styled.button`
   cursor: pointer;
 `;
 
-export const DateRangePickerStyled = styled(DateRangePicker)`
-  background: #ffffff;
-  border: 1px solid #cccbcb;
-  border-radius: 3px;
-  box-shadow: none;
-  padding: 0 20px;
-  .react-daterange-picker__wrapper {
-    border: none;
-  }
-  .react-daterange-picker__inputGroup__input:invalid {
-    background: transparent;
-  }
+export const DateRangePickerHTML5 = styled.div`
   input {
-    outline: none;
+    height: 36px;
   }
 `;
